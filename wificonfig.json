@@ -1,0 +1,16 @@
+{
+    "aironet": [
+        {
+            "host_ip": "10.22.10.3",
+            "hostname": "22-SheAccessPoint",
+            "username": "admin",
+            "password": "pass",
+            "ssid":"22-Resorts World-SHE",
+            "authentication":"open",
+            "key-man":"wpa",
+            "wifi-pass":"C1sc0123",
+            "channel":"6",
+            "enc-mod":"tkip"
+        }
+    ]
+}
