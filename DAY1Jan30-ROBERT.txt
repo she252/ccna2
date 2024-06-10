@@ -69,10 +69,10 @@ config t
 !DHCP: DYNAMIC HOST CONFIGURATION PROTOCOL
 !@@@LEAF SWITCH
 config t
-ip dhcp Excluded-add 10.22.1.1 10.22.1.100
-ip dhcp Excluded-add 10.22.10.1 10.22.10.100
-ip dhcp Excluded-add 10.22.50.1 10.22.50.100
-ip dhcp Excluded-add 10.22.100.1 10.22.100.100
+ip dhcp Excluded-add 10.22.1.1 10.22.1.200
+ip dhcp Excluded-add 10.22.10.1 10.22.10.200
+ip dhcp Excluded-add 10.22.50.1 10.22.50.200
+ip dhcp Excluded-add 10.22.100.1 10.22.100.200
 ip dhcp pool MGMTDATA
    network 10.22.1.0 255.255.255.0
    default-router 10.22.1.4
