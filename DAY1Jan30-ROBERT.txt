@@ -202,7 +202,7 @@ ephone-dn 9
 ephone-dn 10
   number 2291
 Ephone 1
-  Mac-address CCD8.C1FB.14C9
+  Mac-address 6CFA.8972.ECBF
   type 8945
   button 1:1 2:3 3:2 4:9
   restart
@@ -302,7 +302,7 @@ dial-peer voice 82 Voip
  codec g711ULAW
 dial-peer voice 91 Voip
  destination-pattern 91..
- session target ipv4:10.82.100.8
+ session target ipv4:10.82.100.8 
  codec g711ULAW
 
 @@@@@@
