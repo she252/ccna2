@@ -1,0 +1,160 @@
+1. Design a call center for accenture.com 1.0.0.0/8 with 380 agents, PMs, and team leads.
+
+CSI Method
+C- convert it: 380 = 9bits
+S- Subtract it: /32 - /9 =23. 3rr, 2i
+I- Ipasok sa hiwa = ipasok 2i sa 3rd
+
+accenture.com = 10.0.2.0/23
+1st Valid:10.0.2.1/23 - 10.0.2.254/23
+Last IP:10.0.3.255/23
+Not accenture = 10.0.4.0/23
+
+Design SYkes.com network using 10.0.0.0/8 with 2500 agents and users
+
+C- 2500 = 12bits
+S - 32-12 = /20. 3rd, 16
+I - 10.0.16.0/20
+
+Sykes.com :10.0.16.0/20
+!st Valid = 10.0.16.1/20 - 10.0.31.254/20
+last ip = 10.0.31.255/20
+not sykes = 10.0.32.0/20
+
+Design and configure pnp.gov.ph network with 55 emergency responders using 10.0.0.0/8
+
+C= 55
+S=32-6 = /26, 3rd, 64i
+I= 10.0.64.0/26
+
+PNP: 10.0.0.64/26
+1st Valid:10.0.64.1/26 - 10.0.64.24/26
+Last IP: 10.0.64.255/26
+Not PNP:10.0.0.128/26
+
+
+
+
+
+design a network for cnx with 4900 agents using 10.0.0.0/8
+C= 4900
+S=/32-/13 = 19, 3rd, 32i
+I= 10.0.32.0/19
+
+concentrix.com: 10.0.32.0/19
+1st Valid:10.0.32.1/19 - 10.0.63.254/19
+Last IP:10.0.63.255/19
+Not Valid: 10.0.64.0/19
+
+
+
+Ex5: Design and implem telos.com network with 850 agents and TLs.
+
+C = 850 = 10bits
+S = /32 - /10 = 22 3rd, 4i
+I= 10.0.4.0/22
+
+telus.com = 10.0.4.0/22
+1st Valid = 10.0.4.1/22 - 10.0.7.254/22
+Last IP: 10.0.7.255/22
+Not Valid=10.0.8.0/22
+
+
+
+ex6. Design and implement etelecare.com network with 1669 hosts and managers.
+
+C= 1669=11b
+S=/32-11= 21 3rd, 8i
+I= 10.0.8.0/21
+
+etelecare.com = 10.0.8.0/21
+1st valid = 10.0.8.1/21 - 10.0.16.254/21
+last ip: 10.0.16.255/21
+not valid= 10.0.16.0/21
+
+
+Design and implem GSIS.GOV.PH using 10.0.0.0/8 with 240 gov agents
+
+C=240 =9b
+S= 32-9 = 23 3rd, 2i
+I = 10.0.2.0/23
+
+1st valid = 10.0.2.1/23 - 10.0.4.254/23
+last ip: 10.0.4.255/23
+Not gsis: 10.0.4.0/23
+
+I
+Learning 5 hit combo of subnetting
+1. get the network
+2. get the valid range
+3. get the broadcast
+4. get all the hosts
+5. get all the subnet total
+
+ex1. You found laptop with the ip address og 192.168.10.99/28
+
+1. anong 16i ang malapit sa 99:
+192.168.10.96/28 - network
+2. 192.168.10.96 /28-192.168.10.110
+3. broadcast: 192.168.10.111
+4. host / original -> /now -2
+=14 hosts
+5. total subnet:
+/now - /orig = /28 -/24 =2r4 = 16-2 = 14 subnets
+
+ex 2. yu found a tablet with ip address of 192.168.100.69/27
+1. 192.168.100.64/27 , next network 192.168.100.96
+2.192.168.100.65  - 192.168.100.94 
+3. 192.168.100.95 
+4. total host?
+/32 - /? = 27
+/32 - /5 = 27 , 2^5 = 32-2= 30 hosts
+5.total subnets?
+/orig + /3 = 27, 2r3 = 8-2 = 6subnets
+
+
+10.x.x.x = /24
+
+3. you found a tablet with ip 192.168.50.77 /26
+
+1. 4th, 64i. 192.168.50.64 /26
+2. 192.168.50.65 - 192.168.50.126
+3. 192.168.50.127
+4. /32-/something = 26
+/32 - /6 = 26
+2^6=64-2=62
+5.total subnets?
+/24 + /2 = 26 
+2^/somethig =2^2
+=4
+
+
+4. You found gold laptop with ip 10.50.100.35 /19
+1. 3rd, 32i = 10.50.96.35 /19
+10.50.96.0- 10.50.128.0
+2. 96.1-127.254
+3. 127.255
+4./32 - /something = /now
+
+
+
+
+design ang configure dlsu.edu.ph using 10.0.0.0/8 with 2500 students
+
+C = 2500 , 12b
+S = 32-12 = 20 , 3rd, 16i
+I = 10.0.16.0/20
+
+dlsu.edu.ph = 10.0.16.0/20
+1st valid = 10.0.16.1/21 - 10.0.31.254/21
+last ip: 10.0.31.255/21
+not valid= 10.0.32.0/21
+
+C= 1669=11b
+S=/32-11= 21 3rd, 8i
+I= 10.0.8.0/21
+
+etelecare.com = 10.0.8.0/21
+1st valid = 10.0.8.1/21 - 10.0.15.254/21
+last ip: 10.0.15.255/21
+not valid= 10.0.16.0/21
