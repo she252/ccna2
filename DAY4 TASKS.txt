@@ -1,0 +1,143 @@
+DAY4
+TASK 2: 
+configuring encryption in cisco
+
+conf t
+!give private key to cisco using name
+ip domain-name rivanit.com
+crypto key generate rsa
+
+ip ssh version 2
+
+
+Task 3: how do you know if you are hacked?
+
+Learn 3 way HandShake
+1. IP add and Port number= socket
+
+nmap -v 50.6.160.0/24
+
+Task 4: How to Attack unprotected windows pc
+1.
+netbios attack
+net use \\10.81.1.10\ipc$
+
+
+How to attack port 445? opening victim drvie remotely
+
+net use h: \\10.81.1.10\c$ (
+
+netstat -s -p tcp
+
+Wireshark
+-filet via source
+
+
+3kinds of Mac
+-unicast   not 
+-multicast 01-00-5e
+-broadcast ff-ff-ff-ff
+
+NO ip access-list standard NOBUYME
+ip access-list standard NOBUYME
+DENY 161.49.0.0 0.0.255.255
+DENY 163.181.0.0 0.0.255.255
+DENY 47.246.0.0 0.0.255.255
+DENY 143.92.0.0 0.0.255.255
+DENY 172.64.0.0 0.0.255.255
+DENY 104.18.0.0 0.0.255.255
+Permit Any
+Int Gi 0/0/1
+ ip access-group NOBUYME in
+ end
+
+config t
+NO ip access-list standard halfKAMI1
+ip access-list standard halfKAMI1
+DENY 10.51.0.0 0.0.255.255
+DENY 10.61.0.0 0.0.255.255
+DENY 10.71.0.0 0.0.255.255
+DENY 10.81.0.0 0.0.255.255
+DENY 10.92.0.0 0.0.255.255
+DENY 10.62.0.0 0.0.255.255
+DENY 10.52.0.0 0.0.255.255
+DENY 10.82.0.0 0.0.255.255
+DENY 10.72.0.0 0.0.255.255
+DENY 10.11.0.0 0.0.255.255
+DENY 10.21.0.0 0.0.255.255
+DENY 10.31.0.0 0.0.255.255
+DENY 10.41.0.0 0.0.255.255
+Permit Any
+Int Gi 0/0/1
+ ip access-group halfKAMI1 in ---------> to allow blocking
+ end
+
+config t
+NO ip access-list standard halfKAMI1
+ip access-list standard halfKAMI1
+DENY 10.51.0.0 0.0.255.255
+DENY 10.61.0.0 0.0.255.255
+DENY 10.71.0.0 0.0.255.255
+DENY 10.81.0.0 0.0.255.255
+DENY 10.92.0.0 0.0.255.255
+DENY 10.62.0.0 0.0.255.255
+DENY 10.52.0.0 0.0.255.255
+DENY 10.82.0.0 0.0.255.255
+DENY 10.72.0.0 0.0.255.255
+Permit Any
+Int Gi 0/0/1
+ no ip access-group halfKAMI1 in --------------> to disable blocking
+ end
+
+
+
+Task 4: Configuring Firewalls
+TOP 5 NGFW
+1. Palo Alto
+2. Check Point
+3. Cisco
+4. Sonicwall
+5. FGT -->69
+
+TASK 5:
+Blocking Ports and Services (Layer 4)
+
+DNS
+-7dns entried to be legit (ns, ___, www, smtp,pop,imap,MX)
+Web server
+
+
+How to install DNS serrer and web in servers
+-cmd
+-powershell
+Install-WindowsFeature -name dns -includeManagementTools
+Install-WindowsFeature -name web-server -includeManagementTools
+
+TASK6: Creating Fake Legit Business Email: 
+
+to send mail: need smtp
+get mail: need pop
+get/send:imap
+gcash@kimstore22.com
+maya@kimstore22.com
+
+gcash@lazada22.com
+maya@lazada22.com
+
+config t
+no event manager applet makeloop
+event manager applet makeloop
+ event none
+ action 1.0 puts "How many Loopback interfaces do you wish to create?"
+ action 1.1 puts nonewline "> "
+ action 1.2 gets num 
+ action 2.0 cli command "enable"
+ action 2.1 cli command "conf t"
+ action 3.0 set i "1"
+ action 3.1 while $i le $num
+ action 3.2  cli command "interface Loopback $i"
+ action 3.3  cli command "ip address $i.$i.$i.$i 255.255.255.255"
+ action 3.4  increment i 1
+ action 3.5 end
+ action 4.0 cli command "end"
+ end
